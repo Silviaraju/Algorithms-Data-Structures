@@ -1,0 +1,53 @@
+//Write a Java program that performs addition, subtraction, multiplication and division
+//based on the user input (you can use java.util.Scanner class to take input). The program
+//takes the value of both the numbers (entered by user) and then user is asked to enter
+//the operation (+, -, * and /), based on the input program performs the selected operation
+//on the entered numbers using switch case.
+
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int n1,n2;
+//User input
+        System.out.println("\n Enter the numbers:");
+        n1 = scanner.nextInt();
+        n2 = scanner.nextInt();
+
+        System.out.println("\n Enter the operation you want to perform:");
+        char op = scanner.next().charAt(0);
+
+        scanner.close();
+        int result;
+
+        switch(op){
+            case '+':
+                result = n1 + n2;
+                break;
+
+
+            case '-':
+                result = n1 - n2;
+                break;
+
+            case '*':
+                result = n1 * n2;
+                break;
+
+            case '/':
+                result = n1 / n2;
+                break;
+//If the user enters any other operator other than +, _, *, /, then default case to display the error message.
+            default:
+                System.out.println("\n Wrong operation selected");
+                return;
+        }
+
+        System.out.println(n1 +" "+op+" "+n2+": "+result);
+    }
+}
